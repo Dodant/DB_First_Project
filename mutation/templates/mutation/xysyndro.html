@@ -1,0 +1,23 @@
+{% extends 'mutation/layout.html' %}
+
+{% block title %}Allosome Syndrome{% endblock %}
+
+{% block content %}
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td><B>Syndrome</B></td>
+            <td><B>Description</B></td>
+            <td><B>Frequency</B></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{xysyn_info.allo_syn_name}}</td>
+            <td>{{xysyn_info.allo_syn_desc}}</td>
+            <td>{{xysyn_info.allo_syn_fre}}</td>
+        </tr>
+        <tbody>
+    </table>
+{% endblock %}

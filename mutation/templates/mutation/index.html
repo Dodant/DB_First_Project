@@ -1,0 +1,46 @@
+{% extends 'mutation/layout.html' %}
+
+{% block title %}Mutation{% endblock %}
+
+{% block content %}
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td><B>Autosome No.</B></td>
+            <td><B>Mutation Type</B></td>
+            <td><B>Secondary Autosome No.</B></td>
+            <td><B>Syndrome</B></td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for mutation in auto_mutation_list %}
+
+        <tr>
+            <td><a href = "/mutation/{{mutation.auto_pri}}/">{{mutation.auto_pri}}</a></td>
+            <td>{{mutation.mutation_type}}</td>
+            <td>{{mutation.auto_sec}}</td>
+            <td><a href = "/mutation/syndro/{{mutation.auto_mut_code}}/">{{mutation.auto_syn_id}}</a></td>
+        </tr>
+        {% endfor %}
+        <tbody>
+    </table>
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td><B>Allosome Linked</B></td>
+            <td><B>Syndrome</B></td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for linked in allo_mutation_list %}
+        <tr>
+            <td>{{linked.linked}}</td>
+            <td><a href = "/mutation/xysyndro/{{linked.allo_mut_code}}/">{{linked.allo_syn_id}}</a></td>
+        </tr>
+        {% endfor %}
+        <tbody>
+    </table>
+{% endblock %}

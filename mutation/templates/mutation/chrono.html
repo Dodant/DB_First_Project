@@ -1,0 +1,21 @@
+{% extends 'mutation/layout.html' %}
+
+{% block title %}Autosome{% endblock %}
+
+{% block content %}
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td><B>Autosome</B></td>
+            <td><B>Description</B></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{autosome.auto_no}}</td>
+            <td>{{autosome.auto_desc}}</td>
+        </tr>
+        <tbody>
+    </table>
+{% endblock %}
